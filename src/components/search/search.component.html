@@ -5,6 +5,8 @@
         </h2>
     </div>
     <div *ngIf="searchTerm != undefined">
-        You searched for {{ searchTerm }}
+        <span *ngIf="nowLoading">
+                <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+        </span>
     </div>
 </div>

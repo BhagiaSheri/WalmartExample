@@ -10,16 +10,16 @@ import { ApiService } from '../../services/api/api.service';
 export class SearchComponent implements OnInit {
 
   searchTerm: string;
-  nowLoading: boolean = false;
+  nowLoading = false;
+  searchResults: SearchResultModel[];
 
   constructor(private route: ActivatedRoute,
-              private api: ApiService) { 
-  }
+              private api: ApiService) {}
 
   ngOnInit() {
     this.route.params.subscribe(p => {
       this.searchTerm = p['query'];
-      if (this.searchTerm != undefined) {
+      if (this.searchTerm !== undefined) {
         this.nowLoading = true;
         this.acquireSearchResults();
       }
@@ -28,8 +28,9 @@ export class SearchComponent implements OnInit {
 
   private acquireSearchResults() {
     this.api.getProducts(this.searchTerm).subscribe(result => {
-      console.log(result);
-    })
+      this.searchResults = result['items'] as SearchResultModel[];
+      this.nowLoading = false;
+    });
   }
 
 }

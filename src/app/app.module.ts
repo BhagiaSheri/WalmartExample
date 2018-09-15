@@ -2,10 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { SearchComponent } from '../components/search/search.component'
+import { SearchComponent } from '../components/search/search.component';
 import { MenuBarComponent } from '../components/menu-bar/menu-bar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from '../services/api/api.service';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const appRoutes: Routes = [
   { path: 'search/:query', component: SearchComponent },
@@ -27,6 +28,7 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
+    MatProgressSpinnerModule,
   ],
   providers: [
     ApiService,

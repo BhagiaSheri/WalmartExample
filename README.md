@@ -7,6 +7,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 One will need to run Chrome with --disable-web-security to prevent CORS issues due to the localhost/walmart URL origin conflict. Please refer to the following StackOverflow page:
 https://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome
 
+Example for Mac: open -a Google\ Chrome --args --disable-web-security --user-data-dir=""
+Example for Windows: chrome.exe --disable-web-security --user-data-dir=""
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
