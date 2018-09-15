@@ -1,0 +1,9 @@
+<div class="menu-bar-container">
+    <div class="spark-search-wrapper">
+        <img class="spark-image" src="../../assets/images/Walmart_Spark.png">
+      </div>
+      <div class="search-container">
+            <input class="search-input" #search type="text" (keyup.enter)="submitSearch(search.value)" placeholder="Search" name="search">
+            <button type="button" (click)="submitSearch(search.value)"><i class="fa fa-search"></i></button>
+        </div>
+</div>

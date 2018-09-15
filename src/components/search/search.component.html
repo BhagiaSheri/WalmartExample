@@ -1,0 +1,10 @@
+<div class="displayResults">
+    <div *ngIf="searchTerm == undefined">
+        <h2>
+            Please enter an item to search for!
+        </h2>
+    </div>
+    <div *ngIf="searchTerm != undefined">
+        You searched for {{ searchTerm }}
+    </div>
+</div>
