@@ -18,4 +18,8 @@ export class MenuBarComponent implements OnInit {
       this.router.navigate(['/search', value]);
     }
   }
+
+  routeToHome() {
+    this.router.navigate(['/search']);
+  }
 }

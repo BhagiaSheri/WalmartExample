@@ -10,6 +10,6 @@
   <div class="item-text">
     <br/>
     <br/>
-    <span [innerHTML]="shortDescription" class="item-text"></span>
+    <div [innerHTML]="longDescription === undefined ? shortDescription : longDescription" class="item-text"></div>
   </div>
 </div>

@@ -4,4 +4,5 @@ class SearchResultModel {
     public stock: string;
     public name: string;
     public shortDescription: string;
+    public itemId: number;
 }

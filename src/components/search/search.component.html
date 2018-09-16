@@ -14,7 +14,7 @@
             [salePrice]="item.salePrice"
             [stock]="item.stock"
             [name]="item.name"
-            [shortDescription]="item.shortDescription"></app-item>
+            [shortDescription]="item.shortDescription" class="item" (click)="selectItem(item.itemId)"></app-item>
         </div>
     </div>
 </div>

@@ -8,8 +8,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from '../services/api/api.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ItemComponent } from '../components/item/item.component';
+import { ItemPageComponent } from '../components/item-page/item-page.component';
 
 const appRoutes: Routes = [
+  { path: 'item/:itemId', component: ItemPageComponent },
   { path: 'search/:query', component: SearchComponent },
   { path: 'search', component: SearchComponent },
   { path: '',
@@ -25,6 +27,7 @@ const appRoutes: Routes = [
     SearchComponent,
     MenuBarComponent,
     ItemComponent,
+    ItemPageComponent,
   ],
   imports: [
     BrowserModule,
