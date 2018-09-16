@@ -8,6 +8,8 @@ In addition to the two API calls we were instructed to use, I used the Product L
 
 I also relied heavily on the Angular Component architecture, in specific, creating a versatile "item" Component which I was able to reuse in three unique ways across the single page application.
 
+Examples of how I implemented responsive design include media queries, font size scaling based on view width, and flex-box magic.
+
 ## Development server
 
 One will need to run Chrome with --disable-web-security and --user-data-dir="" to prevent CORS issues due to the localhost/walmart URL origin conflict which most modern browsers flag as a CORS violation. Please refer to the following StackOverflow page:
