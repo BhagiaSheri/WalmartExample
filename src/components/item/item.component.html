@@ -1,4 +1,4 @@
-<div class="item-wrapper">
+<div class="item-wrapper" [ngClass]="{ 'item-clickable': itemClickable }" (click)="selectItem()">
   <div class="image-wrapper">
     <img class="display-image" [src]="largeImage">
   </div>
@@ -10,6 +10,6 @@
   <div class="item-text">
     <br/>
     <br/>
-    <div [innerHTML]="longDescription === undefined ? shortDescription : longDescription" class="item-text"></div>
+    <div [innerHTML]="description" class="item-text"></div>
   </div>
 </div>

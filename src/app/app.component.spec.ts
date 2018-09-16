@@ -4,12 +4,12 @@ import { MenuBarComponent } from '../components/menu-bar/menu-bar.component';
 import { SearchComponent } from '../components/search/search.component';
 import { ItemComponent } from '../components/item/item.component';
 import { ItemPageComponent } from '../components/item-page/item-page.component';
-import { BrowserModule } from '../../node_modules/@angular/platform-browser';
-import { RouterModule, Routes } from '../../node_modules/@angular/router';
-import { HttpClientModule } from '../../node_modules/@angular/common/http';
-import { MatProgressSpinnerModule } from '../../node_modules/@angular/material/progress-spinner';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ApiService } from '../services/api/api.service';
-import { APP_BASE_HREF } from '../../node_modules/@angular/common';
+import { APP_BASE_HREF } from '@angular/common';
 
 const appRoutes: Routes = [
   { path: 'item/:itemId', component: ItemPageComponent },

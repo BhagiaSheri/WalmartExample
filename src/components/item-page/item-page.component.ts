@@ -28,7 +28,7 @@ export class ItemPageComponent implements OnInit {
       this.api.getItem(this.itemId).subscribe(result => {
         this.item = result['items'][0] as SearchResultModel;
         this.nowLoadingGetItem = false;
-        console.log(this.item);
+        console.log(this.item.stock);
       });
 
       this.nowLoadingGetRecommendations = true;

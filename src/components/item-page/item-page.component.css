@@ -1,0 +1,23 @@
+
+:host>>> .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: rgba(4, 30, 66, 0.98);
+}
+
+.content-wrapper {
+    padding-top: 18px;
+}
+
+.recommendations-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.display-center {
+    display: flex;
+    justify-content: center;
+}
+
+div h1.recommendations-separator {
+    margin-bottom: 40px;
+}

@@ -10,6 +10,6 @@
     justify-content: center;
 }
 
-.item {
-    cursor: pointer;
+:host>>> .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: rgba(4, 30, 66, 0.98);
 }

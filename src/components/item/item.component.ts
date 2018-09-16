@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-item',
@@ -16,11 +17,13 @@ export class ItemComponent implements OnInit {
   @Input()
   name: string;
   @Input()
-  longDescription: string;
+  description: string;
   @Input()
-  shortDescription: string;
+  itemId: string;
+  @Input()
+  itemClickable: boolean;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     // Converts common HTML sequences for use with innerHTML
@@ -36,16 +39,16 @@ export class ItemComponent implements OnInit {
   }
 
   private formatHtmlInDescriptions() {
-    if (this.longDescription) {
-      this.longDescription = this.replaceAll(this.longDescription, '&lt;', '<');
-      this.longDescription = this.replaceAll(this.longDescription, '&gt;', '>');
-      this.longDescription = this.replaceAll(this.longDescription, '&quot;', '"');
+    if (this.description) {
+      this.description = this.replaceAll(this.description, '&lt;', '<');
+      this.description = this.replaceAll(this.description, '&gt;', '>');
+      this.description = this.replaceAll(this.description, '&quot;', '"');
     }
+  }
 
-    if (this.shortDescription) {
-      this.shortDescription = this.replaceAll(this.shortDescription, '&lt;', '<');
-      this.shortDescription = this.replaceAll(this.shortDescription, '&gt;', '>');
-      this.shortDescription = this.replaceAll(this.shortDescription, '&quot;', '"');
+  selectItem() {
+    if (this.itemClickable) {
+      this.router.navigate(['/item', this.itemId]);
     }
   }
 }

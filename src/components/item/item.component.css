@@ -8,6 +8,10 @@
     height: auto;
 }
 
+.item-clickable {
+    cursor: pointer;
+}
+
 .item-wrapper {
     display: flex;
     justify-content: center;

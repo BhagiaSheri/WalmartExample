@@ -1,5 +1,36 @@
-<span *ngIf="nowLoadingGetItem || nowLoadingGetRecommendations">
-  <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
-</span>
-<div *ngIf="!nowLoadingGetItem && !nowLoadingGetRecommendations">
+<div class="content-wrapper display-center">
+  <span class="loading-icon" *ngIf="nowLoadingGetItem || nowLoadingGetRecommendations">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  </span>
+  <div *ngIf="!nowLoadingGetItem && !nowLoadingGetRecommendations">
+    <div class="display-center">
+      <app-item 
+      [largeImage]="item.largeImage"
+      [salePrice]="item.salePrice"
+      [stock]="item.stock"
+      [name]="item.name"
+      [description]="item.longDescription"
+      [itemClickable]="false"
+      ></app-item>
+    </div>
+    <div class="display-center">
+        <h1 class="recommendations-separator">Other Recommendations</h1>
+    </div>
+    <div>
+      <div *ngIf="!recommendations">
+          <h1 class="recommendations-separator">There are currently no recommendations for this item!</h1>
+      </div>  
+      <div *ngIf="recommendations" class="recommendations-wrapper">
+          <app-item *ngFor="let recommendation of recommendations"
+          [largeImage]="recommendation.largeImage"
+          [salePrice]="recommendation.salePrice"
+          [stock]="recommendationstock"
+          [name]="recommendation.name"
+          [description]="recommendation.shortDescription"
+          [itemClickable]="true"
+          [itemId]="recommendation.itemId"
+          ></app-item>
+      </div>
+    </div>
+  </div>
 </div>

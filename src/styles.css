@@ -2,8 +2,3 @@
 :host>>> body {
     font-family: BogleWeb,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
-
-
-:host>>> .mat-progress-spinner circle, .mat-spinner circle {
-    stroke: rgba(4, 30, 66, 0.98);
-}
