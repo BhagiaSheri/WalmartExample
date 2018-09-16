@@ -1,24 +1,29 @@
 <div class="displayResults">
     <div *ngIf="searchTerm == undefined">
-        <h2>
+        <p>
             Please enter an item to search for!
-        </h2>
+        </p>
     </div>
     <div *ngIf="searchTerm != undefined">
         <span *ngIf="nowLoading">
                 <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
         </span>
-        <div *ngIf="!nowLoading" class="item-wrapper">
-            <app-item *ngFor="let item of searchResults" 
-            [largeImage]="item.largeImage"
-            [salePrice]="item.salePrice"
-            [stock]="item.stock"
-            [name]="item.name"
-            [description]="item.shortDescription"
-            [itemId]="item.itemId"
-            [itemClickable]="true"
-            class="item"
-            ></app-item>
+        <div *ngIf="!nowLoading">
+            <div class="display-term">
+                    <p>{{ 'You searched for: ' + searchTerm }}</p>
+            </div>
+            <div class="item-wrapper">
+                <app-item *ngFor="let item of searchResults" 
+                [largeImage]="item.largeImage"
+                [salePrice]="item.salePrice"
+                [stock]="item.stock"
+                [name]="item.name"
+                [description]="item.shortDescription"
+                [itemId]="item.itemId"
+                [itemClickable]="true"
+                class="item"
+                ></app-item>
+            </div>            
         </div>
     </div>
 </div>

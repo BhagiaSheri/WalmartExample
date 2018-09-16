@@ -2,3 +2,7 @@
 :host>>> body {
     font-family: BogleWeb,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
+
+p {
+    font-size: 3vw;
+}

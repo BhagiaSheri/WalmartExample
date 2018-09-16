@@ -4,6 +4,9 @@
   </span>
   <div *ngIf="!nowLoadingGetItem && !nowLoadingGetRecommendations">
     <div class="display-center">
+        <p class="recommendations-separator">{{ item.name }}</p>
+    </div>
+    <div class="display-center">
       <app-item 
       [largeImage]="item.largeImage"
       [salePrice]="item.salePrice"
@@ -12,13 +15,14 @@
       [description]="item.longDescription"
       [itemClickable]="false"
       ></app-item>
+
     </div>
     <div class="display-center">
-        <h1 class="recommendations-separator">Other Recommendations</h1>
+        <p class="recommendations-separator">--- Other Recommendations ---</p>
     </div>
     <div>
-      <div *ngIf="!recommendations">
-          <h1 class="recommendations-separator">There are currently no recommendations for this item!</h1>
+      <div class="display-center" *ngIf="!recommendations">
+          <p class="recommendations-separator">There are currently no recommendations for this item!</p>
       </div>  
       <div *ngIf="recommendations" class="recommendations-wrapper">
           <app-item *ngFor="let recommendation of recommendations"

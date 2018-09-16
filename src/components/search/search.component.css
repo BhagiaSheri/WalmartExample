@@ -13,3 +13,8 @@
 :host>>> .mat-progress-spinner circle, .mat-spinner circle {
     stroke: rgba(4, 30, 66, 0.98);
 }
+
+.display-term {
+    display: flex;
+    justify-content: center;
+}
