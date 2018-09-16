@@ -8,7 +8,7 @@
         <span *ngIf="nowLoading">
                 <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
         </span>
-        <div *ngIf="!nowLoading">
+        <div *ngIf="!nowLoading" class="item-wrapper">
             <app-item *ngFor="let item of searchResults" 
             [largeImage]="item.largeImage"
             [salePrice]="item.salePrice"

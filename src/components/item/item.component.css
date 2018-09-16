@@ -17,7 +17,11 @@
     background-color:rgba(4, 30, 66, 0.98);
     padding-top: 20px;
     margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     padding-bottom: 20px;
     color: white;
     border-radius: 25px;
+    min-width: 365px;
+    cursor: pointer;
 }

@@ -4,7 +4,7 @@
   </div>
   <span class="item-name">{{name}}</span>
   <br/>
-  <span>{{stock + ' - $' + salePrice}}</span>
+  <span>{{ 'Price: $' + salePrice + ' <> ' + (stock === 'Available' ? 'In Stock' : 'Out of Stock') }}</span>
   <div *ngIf="displayDescription">
     <br/>
     <br/>
