@@ -30,8 +30,17 @@
     max-width: 400px;
 }
 
+.item-clickable:hover {
+    background-color:rgba(4, 30, 66, 0.5);
+}
+
 .item-wrapper-suggested {
     background-color: rgb(62, 197, 230);
+    color: black;
+}
+
+.item-wrapper-suggested:hover {
+    background-color: rgba(62, 197, 230, .5);
     color: black;
 }
 

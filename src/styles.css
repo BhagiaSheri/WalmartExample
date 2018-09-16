@@ -3,3 +3,7 @@
 p.headline-text {
     font-size: 3vw;
 }
+
+div p.headline-text {
+    padding-bottom: 20px;
+}
