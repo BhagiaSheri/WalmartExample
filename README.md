@@ -13,10 +13,15 @@ I also relied heavily on the Angular Component architecture, in specific, creati
 One will need to run Chrome with --disable-web-security and --user-data-dir="" to prevent CORS issues due to the localhost/walmart URL origin conflict which most modern browsers flag as a CORS violation. Please refer to the following StackOverflow page:
 https://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome
 
-How to Run Chrome via Command Line:
-Example for Mac: open -a Google\ Chrome --args --disable-web-security --user-data-dir=""
+How to Run Chrome with CORS disabled via Command Line:
+
+Example for Mac: 
+
+`open -a Google\ Chrome --args --disable-web-security --user-data-dir=""`
+
 Example for Windows: Find the location of chrome.exe on your particular OS, then
-chrome.exe --disable-web-security --user-data-dir=""
+
+`chrome.exe --disable-web-security --user-data-dir=""`
 
 Remember to close all instances of Chrome before running Chrome via these commands, or Chrome preventing CORS violations will not be properly disabled. You will see a message when your Chrome window opens up if you have done this successfully.
 
