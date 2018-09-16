@@ -7,6 +7,7 @@ import { MenuBarComponent } from '../components/menu-bar/menu-bar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from '../services/api/api.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ItemComponent } from '../components/item/item.component';
 
 const appRoutes: Routes = [
   { path: 'search/:query', component: SearchComponent },
@@ -22,7 +23,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     SearchComponent,
-    MenuBarComponent
+    MenuBarComponent,
+    ItemComponent,
   ],
   imports: [
     BrowserModule,
