@@ -4,7 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Philosophy of my Approach
 
-In addition to the two API calls we were instructed to use, I used an additional API call, the Product Lookup API, so that there would be routes that loaded independent of the main search page (i.e. http://localhost:4200/item/33282228) that would display the selected item, and could be refreshed or loaded independently of the Search API results.
+In addition to the two API calls we were instructed to use, I used the Product Lookup API so that there would be routes that loaded independent of the main search page (i.e. http://localhost:4200/item/33282228) that would display the selected item from the search and could be refreshed or loaded independently of the Search API results.
+
+I also relied heavily on the Angular Component architecture, in specific, creating a versatile "item" Component which I was able to reuse in three unique ways across the single page application.
 
 ## Development server
 
@@ -16,7 +18,7 @@ Example for Mac: open -a Google\ Chrome --args --disable-web-security --user-dat
 Example for Windows: Find the location of chrome.exe on your particular OS, then
 chrome.exe --disable-web-security --user-data-dir=""
 
-Remember to close all instances of Chrome before running Chrome via these commands or CORS checking will not be properly disabled. You will see a message when your Chrome window opens up if you have done this successfully.
+Remember to close all instances of Chrome before running Chrome via these commands, or Chrome preventing CORS violations will not be properly disabled. You will see a message when your Chrome window opens up if you have done this successfully.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
