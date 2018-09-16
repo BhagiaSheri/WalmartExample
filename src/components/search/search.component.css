@@ -18,3 +18,7 @@
     display: flex;
     justify-content: center;
 }
+
+:host>>> * {
+    font-family: BogleWeb,Helvetica Neue,Helvetica,Arial,sans-serif;
+}

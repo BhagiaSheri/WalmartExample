@@ -35,3 +35,7 @@
     padding-right: 5px;
     display: block;
 }
+
+:host>>> * {
+    font-family: BogleWeb,Helvetica Neue,Helvetica,Arial,sans-serif;
+}

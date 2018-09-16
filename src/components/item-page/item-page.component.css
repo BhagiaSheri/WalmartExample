@@ -21,3 +21,7 @@
 div h1.recommendations-separator {
     margin-bottom: 40px;
 }
+
+:host>>> * {
+    font-family: BogleWeb,Helvetica Neue,Helvetica,Arial,sans-serif;
+}

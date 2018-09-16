@@ -4,7 +4,7 @@
   </span>
   <div *ngIf="!nowLoadingGetItem && !nowLoadingGetRecommendations">
     <div class="display-center">
-        <p class="recommendations-separator">{{ item.name }}</p>
+        <p class="recommendations-separator headline-text">{{ item.name }}</p>
     </div>
     <div class="display-center">
       <app-item 
@@ -18,11 +18,11 @@
 
     </div>
     <div class="display-center">
-        <p class="recommendations-separator">--- Other Recommendations ---</p>
+        <p class="recommendations-separator headline-text">--- Other Recommendations ---</p>
     </div>
     <div>
       <div class="display-center" *ngIf="!recommendations">
-          <p class="recommendations-separator">There are currently no recommendations for this item!</p>
+          <p class="recommendations-separator headline-text">There are currently no recommendations for this item!</p>
       </div>  
       <div *ngIf="recommendations" class="recommendations-wrapper">
           <app-item *ngFor="let recommendation of recommendations"

@@ -1,6 +1,6 @@
 <div class="displayResults">
     <div *ngIf="searchTerm == undefined">
-        <p>
+        <p class="headline-text">
             Please enter an item to search for!
         </p>
     </div>
@@ -10,7 +10,7 @@
         </span>
         <div *ngIf="!nowLoading">
             <div class="display-term">
-                    <p>{{ 'You searched for: ' + searchTerm }}</p>
+                    <p class="headline-text">{{ 'You searched for: ' + searchTerm }}</p>
             </div>
             <div class="item-wrapper">
                 <app-item *ngFor="let item of searchResults" 

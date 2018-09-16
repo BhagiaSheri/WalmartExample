@@ -1,8 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-:host>>> body {
-    font-family: BogleWeb,Helvetica Neue,Helvetica,Arial,sans-serif;
-}
 
-p {
+p.headline-text {
     font-size: 3vw;
 }
