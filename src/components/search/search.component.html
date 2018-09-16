@@ -9,8 +9,11 @@
                 <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
         </span>
         <div *ngIf="!nowLoading">
-            <div class="display-term">
+            <div *ngIf="searchResults" class="display-term">
                     <p class="headline-text">{{ 'You searched for: ' + searchTerm }}</p>
+            </div>
+            <div *ngIf="!searchResults" class="display-term">
+                    <p class="headline-text">{{ 'There were no results for: ' + searchTerm }}</p>
             </div>
             <div class="item-wrapper">
                 <app-item *ngFor="let item of searchResults" 
