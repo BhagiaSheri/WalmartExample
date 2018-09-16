@@ -2,12 +2,14 @@
   <div class="image-wrapper">
     <img class="display-image" [src]="largeImage">
   </div>
-  <span class="item-name">{{name}}</span>
+  <div class="item-text">
+      <span class="item-name item-text">{{name}}</span>
+  </div>
   <br/>
   <span>{{ 'Price: $' + salePrice + ' <> ' + (stock === 'Available' ? 'In Stock' : 'Out of Stock') }}</span>
-  <div *ngIf="displayDescription">
+  <div class="item-text">
     <br/>
     <br/>
-    <span>{{longDescription}}</span>
+    <span [innerHTML]="shortDescription" class="item-text"></span>
   </div>
 </div>

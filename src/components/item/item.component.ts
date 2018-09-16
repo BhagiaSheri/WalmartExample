@@ -16,14 +16,13 @@ export class ItemComponent implements OnInit {
   @Input()
   name: string;
   @Input()
-  longDescription: string;
+  shortDescription: string;
   @Input()
   displayDescription: boolean;
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.largeImage);
   }
 
 }
