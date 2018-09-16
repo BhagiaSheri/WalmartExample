@@ -1,0 +1,13 @@
+<div class="item-wrapper">
+  <div class="image-wrapper">
+    <img class="display-image" [src]="largeImage">
+  </div>
+  <span class="item-name">{{name}}</span>
+  <br/>
+  <span>{{stock + ' - $' + salePrice}}</span>
+  <div *ngIf="displayDescription">
+    <br/>
+    <br/>
+    <span>{{longDescription}}</span>
+  </div>
+</div>

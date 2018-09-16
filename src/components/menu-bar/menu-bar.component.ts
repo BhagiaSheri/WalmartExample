@@ -8,16 +8,14 @@ import { Router } from '@angular/router';
 })
 export class MenuBarComponent implements OnInit {
 
-  constructor(private router: Router) { 
-
-  }
+  constructor(private router: Router) {}
 
   ngOnInit() {
   }
 
   submitSearch(value: string) {
-    if (value != "") {
-      this.router.navigate(["/search", value]);
+    if (value !== '') {
+      this.router.navigate(['/search', value]);
     }
   }
 }
