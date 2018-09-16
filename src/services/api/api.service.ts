@@ -11,6 +11,8 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   // The instructions stated to keep things simple so I simplified the API calls
+  // I also did not cache any of the results although using a Service or Local Storage would
+  // be both reasonable approaches
   getProducts(query: string) {
     const url = `http://api.walmartlabs.com/v1/search?apiKey=${this.apiKey}&query=${query}&order=asc`;
     return this.http.get(url);
