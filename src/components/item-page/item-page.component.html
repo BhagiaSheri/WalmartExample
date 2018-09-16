@@ -1,3 +1,5 @@
-<p>
-  item-page works!
-</p>
+<span *ngIf="nowLoadingGetItem || nowLoadingGetRecommendations">
+  <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+</span>
+<div *ngIf="!nowLoadingGetItem && !nowLoadingGetRecommendations">
+</div>

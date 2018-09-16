@@ -4,10 +4,6 @@
     padding-top: 18px;
 }
 
-:host>>> .mat-progress-spinner circle, .mat-spinner circle {
-    stroke: rgba(4, 30, 66, 0.98);
-}
-
 .item-wrapper {
     display: flex;
     flex-wrap: wrap;

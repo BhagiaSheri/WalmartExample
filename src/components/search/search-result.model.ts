@@ -1,4 +1,4 @@
-class SearchResultModel {
+export class SearchResultModel {
     public largeImage: string;
     public salePrice: number;
     public stock: string;

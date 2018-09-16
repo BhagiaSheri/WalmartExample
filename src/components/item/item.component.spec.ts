@@ -22,4 +22,9 @@ describe('ItemComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should set to In Stock when stock is Available', () => {
+    fixture.componentInstance.stock = 'Available';
+    expect(fixture.elementRef.nativeElement.querySelector('.item-pricing').textContent.includes('In Stock'));
+  });
 });
