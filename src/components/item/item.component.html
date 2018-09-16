@@ -1,4 +1,4 @@
-<div class="item-wrapper" [ngClass]="{ 'item-clickable': itemClickable }" (click)="selectItem()">
+<div class="item-wrapper" [ngClass]="{ 'item-clickable': itemClickable, 'item-wrapper-suggested': suggestedItem }" (click)="selectItem()">
   <div class="image-wrapper">
     <img class="display-image" [src]="largeImage">
   </div>

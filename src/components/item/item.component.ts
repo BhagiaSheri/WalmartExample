@@ -22,6 +22,8 @@ export class ItemComponent implements OnInit {
   itemId: string;
   @Input()
   itemClickable: boolean;
+  @Input()
+  suggestedItem: boolean;
 
   constructor(private router: Router) { }
 

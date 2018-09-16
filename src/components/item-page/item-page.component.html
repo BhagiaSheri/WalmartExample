@@ -18,7 +18,7 @@
 
     </div>
     <div class="display-center">
-        <p class="recommendations-separator headline-text">--- Other Recommendations ---</p>
+        <p class="recommendations-separator headline-text">--- Customers also bought these products ---</p>
     </div>
     <div>
       <div class="display-center" *ngIf="!recommendations">
@@ -33,6 +33,7 @@
           [description]="recommendation.shortDescription"
           [itemClickable]="true"
           [itemId]="recommendation.itemId"
+          [suggestedItem]="true"
           ></app-item>
       </div>
     </div>
