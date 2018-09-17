@@ -40,7 +40,7 @@ export class ItemComponent implements OnInit {
     return str.replace(new RegExp(this.escapeRegExp(find), 'g'), replace);
   }
 
-  private formatHtmlInDescriptions() {
+  formatHtmlInDescriptions() {
     if (this.description) {
       this.description = this.replaceAll(this.description, '&lt;', '<');
       this.description = this.replaceAll(this.description, '&gt;', '>');
