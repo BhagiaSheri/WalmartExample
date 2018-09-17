@@ -66,3 +66,12 @@
     border-bottom-width: 0px;
     border-right-width: 0px;
 }
+
+.search-container input {
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+.search-container input::placeholder {
+    color: black;
+}
