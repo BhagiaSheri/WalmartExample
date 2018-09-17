@@ -11,6 +11,21 @@ import { MatProgressSpinnerModule } from '../../../node_modules/@angular/materia
 import { ApiService } from '../../services/api/api.service';
 import { APP_BASE_HREF } from '../../../node_modules/@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
+import { of } from 'rxjs';
+
+class MockApiService {
+  getProducts(query: string) {
+    return of(null);
+  }
+
+  getItem(itemId: string) {
+    return of(null);
+  }
+
+  getRecommendations(itemId: string) {
+    return of(null);
+  }
+}
 
 describe('MenuBarComponent', () => {
   let component: MenuBarComponent;
@@ -32,7 +47,7 @@ describe('MenuBarComponent', () => {
         MatProgressSpinnerModule,
       ],
       providers: [
-        ApiService,
+        { provide: ApiService, useClass: MockApiService },
         {provide: APP_BASE_HREF, useValue: '/'}
       ],
     })
@@ -50,19 +65,19 @@ describe('MenuBarComponent', () => {
   });
 
   it('should navigate to /search when routeToHome() fired', () => {
-    let navigateSpy = spyOn((<any>component).router, 'navigate');
+    const navigateSpy = spyOn((<any>component).router, 'navigate');
     component.routeToHome();
     expect(navigateSpy).toHaveBeenCalledWith([ '/search' ]);
   });
 
   it('should navigate to /search/car when submitSearch("car") fired', () => {
-    let navigateSpy = spyOn((<any>component).router, 'navigate');
+    const navigateSpy = spyOn((<any>component).router, 'navigate');
     component.submitSearch('car');
     expect(navigateSpy).toHaveBeenCalledWith([ '/search', 'car' ]);
   });
 
   it('should navigate to /search/car when car typed and search icon clicked', () => {
-    let navigateSpy = spyOn((<any>component).router, 'navigate');
+    const navigateSpy = spyOn((<any>component).router, 'navigate');
     fixture.elementRef.nativeElement.querySelector('.search-input').value = 'car';
     fixture.elementRef.nativeElement.querySelector('.search-button').click();
     fixture.detectChanges();

@@ -11,7 +11,24 @@ import { MenuBarComponent } from '../menu-bar/menu-bar.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from '../../services/api/api.service';
-import { HttpClient } from '../../../node_modules/@types/selenium-webdriver/http';
+import { of } from 'rxjs';
+
+class MockApiService {
+  itemModel = { largeImage: 'http://thekarlbrown.com', itemId: 12345,
+  description: 'meme', stock: 'Silly Pants', salePrice: 14.99, name: 'Karl Brown' };
+
+  getProducts(query: string) {
+    return of(itemModel);
+  }
+
+  getItem(itemId: string) {
+    return of({'items': itemModel});
+  }
+
+  getRecommendations(itemId: string) {
+    return of();
+  }
+}
 
 const appRoutes: Routes = [
   { path: 'item/:itemId', component: ItemPageComponent },
@@ -46,7 +63,7 @@ describe('ItemPageComponent', () => {
         MatProgressSpinnerModule,
       ],
       providers: [
-        ApiService,
+        { provide: ApiService, useClass: MockApiService },
         {provide: APP_BASE_HREF, useValue: '/'}
       ],
     }).compileComponents();
@@ -110,6 +127,7 @@ describe('ItemPageComponent', () => {
     component.nowLoadingGetItem = false;
     component.nowLoadingGetRecommendations = false;
     component.item = itemModel;
+    component.recommendations = undefined;
     fixture.detectChanges();
     expect(fixture.elementRef.nativeElement.querySelector('.no-recommendations').innerText
     .includes('There are currently no recommendations for this item!')).toBeTruthy();

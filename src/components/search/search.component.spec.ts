@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SearchComponent } from './search.component';
 import { AppComponent } from '../../app/app.component';
 import { MenuBarComponent } from '../menu-bar/menu-bar.component';
@@ -11,6 +10,21 @@ import { MatProgressSpinnerModule } from '../../../node_modules/@angular/materia
 import { ApiService } from '../../services/api/api.service';
 import { APP_BASE_HREF } from '../../../node_modules/@angular/common';
 import { RouterTestingModule } from '../../../node_modules/@angular/router/testing';
+import { of } from 'rxjs';
+
+class MockApiService {
+  getProducts(query: string) {
+    return of(null);
+  }
+
+  getItem(itemId: string) {
+    return of(null);
+  }
+
+  getRecommendations(itemId: string) {
+    return of(null);
+  }
+}
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
@@ -32,7 +46,7 @@ describe('SearchComponent', () => {
         MatProgressSpinnerModule,
       ],
       providers: [
-        ApiService,
+        { provide: ApiService, useClass: MockApiService },
         {provide: APP_BASE_HREF, useValue: '/'}
       ],
     })

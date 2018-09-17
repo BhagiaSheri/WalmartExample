@@ -6,7 +6,6 @@ import { MenuBarComponent } from '../menu-bar/menu-bar.component';
 import { ItemPageComponent } from '../item-page/item-page.component';
 import { MatProgressSpinnerModule } from '../../../node_modules/@angular/material/progress-spinner';
 import { HttpClientModule } from '../../../node_modules/@angular/common/http';
-import { Routes, RouterModule } from '../../../node_modules/@angular/router';
 import { BrowserModule } from '../../../node_modules/@angular/platform-browser';
 import { ApiService } from '../../services/api/api.service';
 import { APP_BASE_HREF } from '../../../node_modules/@angular/common';
@@ -15,8 +14,6 @@ import { RouterTestingModule } from '../../../node_modules/@angular/router/testi
 describe('ItemComponent', () => {
   let component: ItemComponent;
   let fixture: ComponentFixture<ItemComponent>;
-  let location: Location;
-  let router: Router;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

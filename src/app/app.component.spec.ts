@@ -10,6 +10,21 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ApiService } from '../services/api/api.service';
 import { APP_BASE_HREF } from '@angular/common';
 import { RouterTestingModule } from '../../node_modules/@angular/router/testing';
+import { of } from 'rxjs';
+
+class MockApiService {
+  getProducts(query: string) {
+    return of(null);
+  }
+
+  getItem(itemId: string) {
+    return of(null);
+  }
+
+  getRecommendations(itemId: string) {
+    return of(null);
+  }
+}
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -28,8 +43,8 @@ describe('AppComponent', () => {
         MatProgressSpinnerModule,
       ],
       providers: [
-        ApiService,
-        {provide: APP_BASE_HREF, useValue: '/'}
+        { provide: ApiService, useClass: MockApiService },
+        { provide: APP_BASE_HREF, useValue: '/'}
       ],
     }).compileComponents();
   }));
