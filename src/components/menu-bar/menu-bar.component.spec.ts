@@ -6,22 +6,11 @@ import { SearchComponent } from '../search/search.component';
 import { ItemComponent } from '../item/item.component';
 import { ItemPageComponent } from '../item-page/item-page.component';
 import { BrowserModule } from '../../../node_modules/@angular/platform-browser';
-import { RouterModule, Routes } from '../../../node_modules/@angular/router';
 import { HttpClientModule } from '../../../node_modules/@angular/common/http';
 import { MatProgressSpinnerModule } from '../../../node_modules/@angular/material/progress-spinner';
 import { ApiService } from '../../services/api/api.service';
 import { APP_BASE_HREF } from '../../../node_modules/@angular/common';
-
-const appRoutes: Routes = [
-  { path: 'item/:itemId', component: ItemPageComponent },
-  { path: 'search/:query', component: SearchComponent },
-  { path: 'search', component: SearchComponent },
-  { path: '',
-    redirectTo: '/search',
-    pathMatch: 'full'
-  },
-  { path: '**', component: SearchComponent }
-];
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('MenuBarComponent', () => {
   let component: MenuBarComponent;
@@ -38,7 +27,7 @@ describe('MenuBarComponent', () => {
       ],
       imports: [
         BrowserModule,
-        RouterModule.forRoot(appRoutes),
+        RouterTestingModule.withRoutes([]),
         HttpClientModule,
         MatProgressSpinnerModule,
       ],
@@ -58,5 +47,25 @@ describe('MenuBarComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should navigate to /search when routeToHome() fired', () => {
+    let navigateSpy = spyOn((<any>component).router, 'navigate');
+    component.routeToHome();
+    expect(navigateSpy).toHaveBeenCalledWith([ '/search' ]);
+  });
+
+  it('should navigate to /search/car when submitSearch("car") fired', () => {
+    let navigateSpy = spyOn((<any>component).router, 'navigate');
+    component.submitSearch('car');
+    expect(navigateSpy).toHaveBeenCalledWith([ '/search', 'car' ]);
+  });
+
+  it('should navigate to /search/car when car typed and search icon clicked', () => {
+    let navigateSpy = spyOn((<any>component).router, 'navigate');
+    fixture.elementRef.nativeElement.querySelector('.search-input').value = 'car';
+    fixture.elementRef.nativeElement.querySelector('.search-button').click();
+    fixture.detectChanges();
+    expect(navigateSpy).toHaveBeenCalledWith([ '/search', 'car' ]);
   });
 });

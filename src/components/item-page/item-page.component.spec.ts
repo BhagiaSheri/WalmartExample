@@ -56,7 +56,7 @@ describe('ItemPageComponent', () => {
     fixture = TestBed.createComponent(ItemPageComponent);
     component = fixture.componentInstance;
     itemModel = { largeImage: 'http://thekarlbrown.com', itemId: 12345,
-    shortDescription: 'meme', stock: 'Silly Pants', salePrice: 14.99, name: 'Karl Brown' };
+    description: 'meme', stock: 'Silly Pants', salePrice: 14.99, name: 'Karl Brown' };
     fixture.detectChanges();
   });
 

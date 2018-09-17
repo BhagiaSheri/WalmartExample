@@ -5,22 +5,11 @@ import { SearchComponent } from '../components/search/search.component';
 import { ItemComponent } from '../components/item/item.component';
 import { ItemPageComponent } from '../components/item-page/item-page.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ApiService } from '../services/api/api.service';
 import { APP_BASE_HREF } from '@angular/common';
-
-const appRoutes: Routes = [
-  { path: 'item/:itemId', component: ItemPageComponent },
-  { path: 'search/:query', component: SearchComponent },
-  { path: 'search', component: SearchComponent },
-  { path: '',
-    redirectTo: '/search',
-    pathMatch: 'full'
-  },
-  { path: '**', component: SearchComponent }
-];
+import { RouterTestingModule } from '../../node_modules/@angular/router/testing';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -34,7 +23,7 @@ describe('AppComponent', () => {
       ],
       imports: [
         BrowserModule,
-        RouterModule.forRoot(appRoutes),
+        RouterTestingModule.withRoutes([]),
         HttpClientModule,
         MatProgressSpinnerModule,
       ],
@@ -44,16 +33,19 @@ describe('AppComponent', () => {
       ],
     }).compileComponents();
   }));
+
   it('should create the app', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
+
   it(`should have as title 'walmart-example'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('walmart-example');
   }));
+
   it('should render containing the menu bar', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
