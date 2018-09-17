@@ -23,24 +23,27 @@ export class ItemPageComponent implements OnInit {
     this.route.params.subscribe(p => {
       this.itemId = p['itemId'];
 
-
       this.nowLoadingGetItem = true;
-      this.api.getItem(this.itemId).subscribe(result => {
-        this.item = result['items'][0] as SearchResultModel;
-        this.nowLoadingGetItem = false;
-      });
-
       this.nowLoadingGetRecommendations = true;
-      this.api.getRecommendations(this.itemId).subscribe(result => {
-        // There is a possibility that there are no recommendations for this product
-        if (result['errors'] === undefined) {
-          this.recommendations = (result as SearchResultModel[]).slice(0, 10);
-        }
+      this.getItem();
+      this.getRecommendations();
+    });
+  }
 
-        this.nowLoadingGetRecommendations = false;
-      });
+  private getItem() {
+    this.api.getItem(this.itemId).subscribe(result => {
+      this.item = result['items'][0] as SearchResultModel;
+      this.nowLoadingGetItem = false;
+    });
+  }
 
-
+  private getRecommendations() {
+    this.api.getRecommendations(this.itemId).subscribe(result => {
+      // There is a possibility that there are no recommendations for this product
+      if (result['errors'] === undefined) {
+        this.recommendations = (result as SearchResultModel[]).slice(0, 10);
+      }
+      this.nowLoadingGetRecommendations = false;
     });
   }
 

@@ -14,6 +14,7 @@
       [name]="item.name"
       [description]="item.longDescription"
       [itemClickable]="false"
+      class="item"
       ></app-item>
 
     </div>
@@ -22,7 +23,7 @@
     </div>
     <div>
       <div class="display-center" *ngIf="!recommendations">
-          <p class="recommendations-separator headline-text">There are currently no recommendations for this item!</p>
+          <p class="recommendations-separator headline-text no-recommendations">There are currently no recommendations for this item!</p>
       </div>  
       <div *ngIf="recommendations" class="recommendations-wrapper">
           <app-item *ngFor="let recommendation of recommendations"
@@ -34,6 +35,7 @@
           [itemClickable]="true"
           [itemId]="recommendation.itemId"
           [suggestedItem]="true"
+          class="recommendation"
           ></app-item>
       </div>
     </div>
