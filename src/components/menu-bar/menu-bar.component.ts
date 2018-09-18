@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class MenuBarComponent implements OnInit {
 
+  @ViewChild('search')
+  search: ElementRef;
   constructor(private router: Router) {}
 
   ngOnInit() {
@@ -21,5 +23,6 @@ export class MenuBarComponent implements OnInit {
 
   routeToHome() {
     this.router.navigate(['/search']);
+    this.search.nativeElement.value = '';
   }
 }

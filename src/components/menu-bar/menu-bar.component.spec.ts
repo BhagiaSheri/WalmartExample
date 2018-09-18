@@ -75,6 +75,13 @@ describe('MenuBarComponent', () => {
     expect(navigateSpy).toHaveBeenCalledWith([ '/search' ]);
   });
 
+  it('should clear search input contents when routeToHome() fired', () => {
+    const navigateSpy = spyOn((<any>component).router, 'navigate');
+    fixture.elementRef.nativeElement.querySelector('.search-input').value = 'car';
+    component.routeToHome();
+    expect(!fixture.elementRef.nativeElement.querySelector('.search-input').value.includes('car')).toBeTruthy();
+  });
+
   it('should navigate to /search/car when submitSearch("car") fired', () => {
     const navigateSpy = spyOn((<any>component).router, 'navigate');
     component.submitSearch('car');

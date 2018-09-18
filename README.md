@@ -10,7 +10,7 @@ I also relied heavily on the Angular Component architecture, in specific, creati
 
 Examples of how I implemented responsive design include media queries, font size scaling based on view width, and flex-box magic.
 
-My 32 Karma Unit Tests included Mocking Services and monitoring resulting routes of Component usage via `spyOn`
+My 33 Karma Unit Tests included Mocking Services and monitoring resulting routes of Component usage via `spyOn`
 
 ## Development server
 
