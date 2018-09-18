@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MenuBarComponent } from './menu-bar.component';
 import { AppComponent } from '../../app/app.component';
 import { SearchComponent } from '../search/search.component';
@@ -67,6 +66,12 @@ describe('MenuBarComponent', () => {
   it('should navigate to /search when routeToHome() fired', () => {
     const navigateSpy = spyOn((<any>component).router, 'navigate');
     component.routeToHome();
+    expect(navigateSpy).toHaveBeenCalledWith([ '/search' ]);
+  });
+
+  it('should navigate to /search when home icon clicked', () => {
+    const navigateSpy = spyOn((<any>component).router, 'navigate');
+    fixture.elementRef.nativeElement.querySelector('.spark-search-wrapper').click();
     expect(navigateSpy).toHaveBeenCalledWith([ '/search' ]);
   });
 

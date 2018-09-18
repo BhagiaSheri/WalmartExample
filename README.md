@@ -10,6 +10,8 @@ I also relied heavily on the Angular Component architecture, in specific, creati
 
 Examples of how I implemented responsive design include media queries, font size scaling based on view width, and flex-box magic.
 
+My 32 Karma Unit Tests included Mocking Services and monitoring resulting routes of Component usage via `spyOn`
+
 ## Development server
 
 One will need to run Chrome with --disable-web-security and --user-data-dir="" to prevent CORS issues due to the localhost/walmart URL origin conflict which most modern browsers flag as a CORS violation. Please refer to the following StackOverflow page:
@@ -36,10 +38,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
 

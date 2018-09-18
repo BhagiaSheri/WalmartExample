@@ -5,14 +5,14 @@
         </p>
     </div>
     <div *ngIf="searchTerm != undefined">
-        <span *ngIf="nowLoading">
+        <span *ngIf="nowLoading" class="progress-spinner">
                 <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
         </span>
         <div *ngIf="!nowLoading">
-            <div *ngIf="searchResults" class="display-term">
+            <div *ngIf="searchResults" class="search-term display-term">
                     <p class="headline-text">{{ 'You searched for: ' + searchTerm }}</p>
             </div>
-            <div *ngIf="!searchResults" class="display-term">
+            <div *ngIf="!searchResults" class="no-results display-term">
                     <p class="headline-text">{{ 'There were no results for: ' + searchTerm }}</p>
             </div>
             <div class="item-wrapper">

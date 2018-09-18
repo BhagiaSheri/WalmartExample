@@ -54,6 +54,12 @@ describe('ItemComponent', () => {
     expect(fixture.elementRef.nativeElement.querySelector('.item-pricing').innerText.includes('In Stock')).toBeTruthy();
   });
 
+  it('should set to Out of Stock when stock is not Available', () => {
+    fixture.componentInstance.stock = 'secretSauce';
+    fixture.detectChanges();
+    expect(fixture.elementRef.nativeElement.querySelector('.item-pricing').innerText.includes('Out of Stock')).toBeTruthy();
+  });
+
   it('should properly set Name field', () => {
     fixture.componentInstance.name = 'Karl Brown';
     fixture.detectChanges();
@@ -64,13 +70,6 @@ describe('ItemComponent', () => {
     fixture.componentInstance.description = 'Full Stack Developer';
     fixture.detectChanges();
     expect(fixture.elementRef.nativeElement.querySelector('.item-description').innerText.includes('Full Stack Developer')).toBeTruthy();
-  });
-
-
-  it('should set to Out of Stock when stock is not Available', () => {
-    fixture.componentInstance.stock = 'secretSauce';
-    fixture.detectChanges();
-    expect(fixture.elementRef.nativeElement.querySelector('.item-pricing').innerText.includes('Out of Stock')).toBeTruthy();
   });
 
   it('should convert characters to HTML friendly', () => {
