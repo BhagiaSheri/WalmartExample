@@ -27,7 +27,7 @@ Example for Windows: Find the location of chrome.exe on your particular OS, then
 
 `chrome.exe --disable-web-security --user-data-dir=""`
 
-Remember to close all instances of Chrome before running Chrome via these commands, or Chrome preventing CORS violations will not be properly disabled. You will see a message when your Chrome window opens up if you have done this successfully.
+Remember to close all instances of Chrome before running Chrome via these commands, or Chrome will not properly disable preventing CORS violations. You will see a message when your Chrome window opens up if you have done this successfully.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
